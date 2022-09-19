@@ -1,0 +1,35 @@
+﻿<Window x:Class="pyatnashki.Results"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:pyatnashki"
+        mc:Ignorable="d"
+        Title="Результаты" Height="360" Width="500">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <DataGrid x:Name="dataGridResults" IsReadOnly="True" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="№" Width="30" Binding="{Binding index}"/>
+                <DataGridTextColumn Header="Дата" Width="140" Binding="{Binding dateSave}"/>
+                <DataGridTextColumn Header="Тип поля" Width="60" Binding="{Binding typeField}"/>
+                <DataGridTextColumn Header="Время" Width="60" Binding="{Binding timeComplete}"/>
+                <DataGridTextColumn Header="Количество ходов" Width="170" Binding="{Binding count}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <Button Content="Параметры" FontSize="14" Height="40" Margin="10 0 10 0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" Click="OnClickParameters"></Button>
+        <Button Content="Переиграть" FontSize="14" Height="40" Margin="10 0 10 0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Click="OnClickRestart"></Button>
+        <Button Content="Закрыть" FontSize="14" Height="40" Margin="10 0 10 0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2" Click="OnClickClose"></Button>
+    </Grid>
+</Window>
